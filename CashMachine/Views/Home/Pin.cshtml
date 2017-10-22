@@ -1,0 +1,22 @@
+﻿@model CashMachine.Models.PinModel
+@{
+    ViewBag.Title = "Pin";
+}
+
+<h2 class="text-center">Please enter Pin</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationMessageFor(model => model.Pin)
+    @Html.ValidationMessage("IncorrectPin")
+    <div class="row">
+        <div class="col-md-12">
+            <input class="number" id="masked-pin" readonly />
+            @Html.HiddenFor(x => x.Pin, new { @id = "pin" })
+            @Html.HiddenFor(x => x.CreditCardId)
+        </div>
+    </div>
+    @Html.Partial("_NumberTable")
+    
+    <a href="@Url.Action("Index", "Home")" class="btn btn-block btn-danger">Exit</a>
+}

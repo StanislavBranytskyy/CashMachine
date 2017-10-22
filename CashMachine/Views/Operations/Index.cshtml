@@ -1,0 +1,10 @@
+﻿@model CashMachine.Models.BalanceModel
+@{
+    ViewBag.Title = "Operations";
+}
+
+<h2>Operations</h2>
+
+<a href="@Url.Action("Balance", "Operations")" class="btn btn-block btn-success">Balance</a>
+<a href="@Url.Action("Withdraw", "Operations")" class="btn btn-block btn-success">Withdraw</a>
+<a href="@Url.Action("Index", "Home")" class="btn btn-block btn-danger">Exit</a>

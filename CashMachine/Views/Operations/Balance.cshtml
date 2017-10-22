@@ -1,0 +1,28 @@
+﻿@model CashMachine.Models.BalanceModel
+@{
+    ViewBag.Title = "Balance";
+}
+
+<h2>Balance</h2>
+
+<fieldset>
+    @Html.LabelFor(x => x.CreditCardNumber)
+    : @Model.CreditCardNumber
+    <br>
+    @Html.LabelFor(x => x.Date)
+    : @Model.Date
+    <br>
+    @Html.LabelFor(x => x.Balance)
+    : @Model.Balance
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="@Url.Action("Back", "Operations")" class="btn btn-block btn-default">Back</a>
+        </div>
+        <div class="col-md-6">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-block btn-danger">Exit</a>
+        </div>
+    </div>
+</fieldset>
+
+

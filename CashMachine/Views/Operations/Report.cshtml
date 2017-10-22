@@ -1,0 +1,28 @@
+﻿@model CashMachine.Models.ReportModel
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Report</h2>
+
+<fieldset>
+    @Html.LabelFor(x => x.CreditCardNumber)
+    : @Model.CreditCardNumber
+    <br>
+    @Html.LabelFor(x => x.DateOfWithdrawal)
+    : @Model.DateOfWithdrawal
+    <br>
+    @Html.LabelFor(x => x.Balance)
+    : @Model.Balance
+    <br>
+    @Html.LabelFor(x => x.WithdrawalAmount)
+    : @Model.WithdrawalAmount
+    <div class="row">
+        <div class="col-md-6">
+            <a href="@Url.Action("Withdraw", "Operations", new { creditCardId = Model.CreditCardId})" class="btn btn-block btn-default">Back</a>
+        </div>
+        <div class="col-md-6">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-block btn-danger">Exit</a>
+        </div>
+    </div>
+</fieldset>

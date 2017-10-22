@@ -1,0 +1,32 @@
+﻿<div class="keyboard">
+    <table class="table" id="@ViewBag.TableId">
+        <tr>
+            <td><input type="button" value="1" class="form-control" /></td>
+            <td><input type="button" value="2" class="form-control" /></td>
+            <td><input type="button" value="3" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" class="form-control" /></td>
+            <td><input type="button" value="5" class="form-control" /></td>
+            <td><input type="button" value="6" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" class="form-control" /></td>
+            <td><input type="button" value="8" class="form-control" /></td>
+            <td><input type="button" value="9" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="*" class="form-control" /></td>
+            <td><input type="button" value="0" class="form-control" /></td>
+            <td><input type="button" value="#" class="form-control" /></td>
+        </tr>
+    </table>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <button type="submit" class="btn btn-block btn-success">OK</button>
+    </div>
+    <div class="col-md-6">
+        <button type="button" class="btn btn-block btn-primary" onclick="clearCreditNumber('@ViewBag.TableId')">Clear</button>
+    </div>
+</div>

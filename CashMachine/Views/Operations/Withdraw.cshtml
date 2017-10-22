@@ -1,0 +1,17 @@
+﻿@model CashMachine.Models.WithdrawModel
+@{
+    ViewBag.Title = "Withdraw";
+}
+
+<h2 class="text-center">Withdraw</h2>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.TextBoxFor(x => x.WithdrawalAmount, new { @id = "withdraw", @class = "number", @readonly = "" })
+            @Html.HiddenFor(x => x.CreditCardId)
+        </div>
+    </div>
+    @Html.Partial("_NumberTable")
+    <a href="@Url.Action("Back", "Operations")" class="btn btn-block btn-default">Back</a>
+}

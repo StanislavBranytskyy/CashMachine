@@ -1,0 +1,21 @@
+﻿@model CashMachine.Models.CreditCardModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2 class="text-center">Please enter credit card number</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationMessageFor(model => model.CreditCardNumber)
+    @Html.ValidationMessage("CreditCardNotFound")
+
+    <div class="row">
+        <div class="col-md-12">
+            <input class="number" id="masked-card-number" readonly />
+           @Html.HiddenFor(x => x.CreditCardNumber, new { @id = "card-number" }) 
+        </div>
+    </div>
+    @Html.Partial("_NumberTable")
+}
